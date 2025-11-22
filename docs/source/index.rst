@@ -13,20 +13,16 @@ This documentation has been created with the following goals in mind:
 
 --------------------------------------------------------------------------------
 
-.. _programming:
 .. toctree::
-	:maxdepth: 2
 	:caption: Programming
-	:hidden:
+	:maxdepth: 2
 
 	c-programming/c-programming
 	c++-programming/c++-programming
 
-.. _embedded-systems:
 .. toctree::
-	:maxdepth: 2
 	:caption: Embedded Systems
-	:hidden:
+	:maxdepth: 2
 
 	communication-protocols/communication-protocols
 
