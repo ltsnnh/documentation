@@ -17,17 +17,15 @@ This documentation has been created with the following goals in mind:
 .. toctree::
    :caption: Programming
    :maxdepth: 2
-   :hidden:
 
-   c-programming/c-programming
-   c++-programming/c++-programming
+   c-programming
+   c++-programming
 
 .. toctree::
    :caption: Embedded Systems
    :maxdepth: 2
-   :hidden:
 
-   communication-protocols/communication-protocols
+   communication-protocols
 
 --------------------------------------------------------------------------------
 
