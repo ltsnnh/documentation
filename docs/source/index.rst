@@ -1,5 +1,5 @@
 Welcome to Ltsnnh documentation!
-=====================================================
+================================================================================
 
 All of the code and some of the hardware design can be found on the `GitHub`_. If you're currently on the GitHub, our documentation can also be viewed on `Read the Docs`_.
 
@@ -11,16 +11,13 @@ This documentation has been created with the following goals in mind:
 - To document the functionality of the various libraries
 - To contain information regarding build instructions and debugging on my custom hardware
 
-My documentation is organized into the following sections:
-
-- :ref:`programming`
-- :ref:`embedded-systems`
-- :ref:`electronics`
+--------------------------------------------------------------------------------
 
 .. _programming:
 .. toctree::
 	:maxdepth: 2
 	:caption: Programming
+	:hidden:
 
 	c-programming/c-programming
 	c++-programming/c++-programming
@@ -29,8 +26,11 @@ My documentation is organized into the following sections:
 .. toctree::
 	:maxdepth: 2
 	:caption: Embedded Systems
+	:hidden:
 
 	communication-protocols/communication-protocols
+
+--------------------------------------------------------------------------------
 
 If you would like to contribute to our documentation, create a branch and start a pull request. If you would like to report an error, please `submit an issue`_.
 
