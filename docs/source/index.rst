@@ -25,7 +25,7 @@ This documentation has been created with the following goals in mind:
    :caption: Embedded Systems
    :maxdepth: 2
 
-   communication-protocols
+   communication-protocols/communication-protocols
 
 --------------------------------------------------------------------------------
 
