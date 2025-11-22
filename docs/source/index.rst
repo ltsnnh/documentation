@@ -22,15 +22,15 @@ My documentation is organized into the following sections:
 	:maxdepth: 2
 	:caption: Programming
 
-   c-programming/c-programming
-   c++-programming/c++-programming
+	c-programming/c-programming
+	c++-programming/c++-programming
 
 .. _embedded-systems:
 .. toctree::
 	:maxdepth: 2
 	:caption: Embedded Systems
 
-   communication-protocols/communication-protocols
+	communication-protocols/communication-protocols
 
 If you would like to contribute to our documentation, create a branch and start a pull request. If you would like to report an error, please `submit an issue`_.
 
