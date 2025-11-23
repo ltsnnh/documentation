@@ -3,7 +3,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Ltsnnh Documentation'
-copyright = '2021, Ltsnnh'
+copyright = '2025, Ltsnnh'
 author = 'Ltsnnh'
 
 release = '1.0'
