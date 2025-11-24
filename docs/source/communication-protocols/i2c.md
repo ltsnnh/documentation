@@ -14,7 +14,7 @@ I<sup>2</sup>C-bus is used in various control architectures such as System Manag
 
 ## I<sup>2</sup>C bus
 
-The I2C bus uses two wires: serial data (SDA) and serial clock (SCL). All I2C master and slave devices are connected with only those two wires.
+The I<sup>2</sup>C bus uses two wires: serial data (SDA) and serial clock (SCL). All I<sup>2</sup>C master and slave devices are connected with only those two wires.
 
 <p align="center">
     <img src="https://files.catbox.moe/npfpvh.png">
@@ -23,7 +23,7 @@ The I2C bus uses two wires: serial data (SDA) and serial clock (SCL). All I2C ma
 
 Each device can be a transmitter, a receiver or both. Some devices are masters – they generate bus clock and initiate communication on the bus, other devices are slaves and respond to the commands on the bus.
 
-In order to communicate with specific device, each slave device must have an address which is unique on the bus. I2C master devices (usually microcontrollers) don’t need an address since no other (slave) device sends commands to the master.
+In order to communicate with specific device, each slave device must have an address which is unique on the bus. I<sup>2</sup>C master devices (usually microcontrollers) don’t need an address since no other (slave) device sends commands to the master.
 
 ### Bus signals
 
@@ -41,19 +41,19 @@ For each clock pulse one bit of data is transferred. The SDA signal can only cha
 
 ### Start and Stop condition
 
-Each I2C command initiated by master device starts with a **START condition** and ends with a **STOP condition**. For both conditions SCL has to be high. A high to low transition of SDA is considered as START and a low to high transition as STOP.
+Each I<sup>2</sup>C command initiated by master device starts with a **START condition** and ends with a **STOP condition**. For both conditions SCL has to be high. A high to low transition of SDA is considered as START and a low to high transition as STOP.
 
 <p align="center">
     <img src="https://files.catbox.moe/x7889v.gif">
 </p>
 
-After the Start condition the bus is considered as busy and can be used by another master only after a Stop condition is detected. After the Start condition the master can generate a repeated Start. This is equivalent to a normal Start and is usually followed by the slave I2C address.
+After the Start condition the bus is considered as busy and can be used by another master only after a Stop condition is detected. After the Start condition the master can generate a repeated Start. This is equivalent to a normal Start and is usually followed by the slave I<sup>2</sup>C address.
 
-Microcontrollers that have dedicated I2C hardware can easily detect bus changes and behave also as I2C slave devices. However, if the I2C communication is implemented in software, the bus signals must be sampled at least two times per clock cycle in order to detect necessary changes.
+Microcontrollers that have dedicated I<sup>2</sup>C hardware can easily detect bus changes and behave also as I<sup>2</sup>C slave devices. However, if the I<sup>2</sup>C communication is implemented in software, the bus signals must be sampled at least two times per clock cycle in order to detect necessary changes.
 
-### I2C data transfer
+### I<sup>2</sup>C data transfer
 
-Data on the I2C bus is transferred in 8-bit packets (bytes). There is no limitation on the number of bytes, however, each byte must be followed by an Acknowledge bit. This bit signals whether the device is ready to proceed with the next byte. For all data bits including the Acknowledge bit, the master must generate clock pulses.
+Data on the I<sup>2</sup>C bus is transferred in 8-bit packets (bytes). There is no limitation on the number of bytes, however, each byte must be followed by an Acknowledge bit. This bit signals whether the device is ready to proceed with the next byte. For all data bits including the Acknowledge bit, the master must generate clock pulses.
 
 <p align="center">
     <img src="https://files.catbox.moe/v038sk.gif">
@@ -71,15 +71,15 @@ Each master must generate its own clock signal and the data can change only when
 
 #### Arbitration
 
-For normal data transfer on the I2C bus only one master can be active. If for some reason two masters initiate I2C command at the same time, the arbitration procedure determines which master wins and can continue with the command.
+For normal data transfer on the I<sup>2</sup>C bus only one master can be active. If for some reason two masters initiate I<sup>2</sup>C command at the same time, the arbitration procedure determines which master wins and can continue with the command.
 
-Arbitration is performed on the SDA signal while the SCL signal is high. Each master checks if the SDA signal on the bus corresponds to the generated SDA signal. If the SDA signal on the bus is low but it should be high, then this master has lost arbitration. Master I2C device that has lost arbitration can generate SCL pulses until the byte ends and must then release the bus and go into slave mode. The arbitration procedure can continue until all the data is transferred. This means that in multi-master system each I2C master must monitor the I2C bus for collisions and act accordingly.
+Arbitration is performed on the SDA signal while the SCL signal is high. Each master checks if the SDA signal on the bus corresponds to the generated SDA signal. If the SDA signal on the bus is low but it should be high, then this master has lost arbitration. Master I<sup>2</sup>C device that has lost arbitration can generate SCL pulses until the byte ends and must then release the bus and go into slave mode. The arbitration procedure can continue until all the data is transferred. This means that in multi-master system each I<sup>2</sup>C master must monitor the I<sup>2</sup>C bus for collisions and act accordingly.
 
 #### Clock synchronization and Handshaking
 
 Slave devices that need some time to process received byte or are not ready yet to send the next byte, can pull the clock low to signal to the master that it should wait. Once the clock is released the master can proceed with the next byte.
 
-#### Communication with 7-bit I2C addresses
+#### Communication with 7-bit I<sup>2</sup>C addresses
 
 <p align="center">
     <img src="https://files.catbox.moe/bczxpm.gif">
@@ -87,7 +87,7 @@ Slave devices that need some time to process received byte or are not ready yet 
 
 Each slave device on the bus should have a unique 7-bit address. The communication starts with the Start condition, followed by the 7-bit slave address and the data direction bit. If this bit is 0 then the master will write to the slave device. Otherwise, if the data direction bit is 1, the master will read from slave device. After the slave address and the data direction is sent, the master can continue with reading or writing.
 
-The communication is ended with the Stop condition which also signals that the I2C bus is free. If the master needs to communicate with other slaves it can generate a repeated start with another slave address without generation Stop condition. All the bytes are transferred with the MSB bit shifted first.
+The communication is ended with the Stop condition which also signals that the I<sup>2</sup>C bus is free. If the master needs to communicate with other slaves it can generate a repeated start with another slave address without generation Stop condition. All the bytes are transferred with the MSB bit shifted first.
 
 <p align="center">
     <img src="https://files.catbox.moe/nmis2v.gif">
@@ -99,7 +99,7 @@ The communication is ended with the Stop condition which also signals that the I
 </p>
 <p align="center">The master only reads to the slave device</p>
 
-Sometimes the master needs to write some data and then read from the slave device. In such cases it must first write to the slave device, change the data transfer direction and then read the device. This means sending the I2C address with the R/W bit set to write and then sending some additional data like register address. After writing is finished the master device generates repeated start condition and sends the I2C address with the R/W bit set to read. After this the data transfer direction is changed and the master device starts reading the data.
+Sometimes the master needs to write some data and then read from the slave device. In such cases it must first write to the slave device, change the data transfer direction and then read the device. This means sending the I<sup>2</sup>C address with the R/W bit set to write and then sending some additional data like register address. After writing is finished the master device generates repeated start condition and sends the I<sup>2</sup>C address with the R/W bit set to read. After this the data transfer direction is changed and the master device starts reading the data.
 
 <p align="center">
     <img src="https://files.catbox.moe/aclnm7.gif">
