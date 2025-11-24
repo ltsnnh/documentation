@@ -8,7 +8,7 @@ In this section, we will describe the SPI protocol.
 
 SPI is a communication protocol typically used for *serial communication* between microcomputer systems and other devices, memories, and sensors. Put simply, it’s a system that allows us to *send a byte* to some device and *receive a byte* in return.
 
-SPI uses what’s called *a Master-Slave architecture*. There is one master device that communicates to multiple slave devices. In most cases, the master device is microcontroller and the slave devices are sensors. The master can only communicate with one slave device at a time and the slaves cannot communicate with each other.
+SPI uses what’s called *a Master-Slave architecture*. There is *one master* device that communicates to *multiple slave* devices. In most cases, the master device is microcontroller and the slave devices are sensors. The master can only communicate with one slave device at a time and the slaves cannot communicate with each other.
 
 ## SPI bus
 
