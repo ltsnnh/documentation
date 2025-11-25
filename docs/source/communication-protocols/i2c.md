@@ -105,3 +105,39 @@ Sometimes the master needs to write some data and then read from the slave devic
     <img src="https://files.catbox.moe/aclnm7.gif">
 </p>
 <p align="center">The master reads and writes to the slave device</p>
+
+## Extension of the I<sup>2</sup>C specifications
+
+Standard mode of I<sup>2</sup>C bus uses transfer rates up to 100 kbit/s and 7-bit addressing. With the advance of the technology, needs for higher transfer rates and larger address space emerged.
+
+### Bus speeds
+
+- Fast Mode – supports transfer rates up to 400 kbit/s.
+- High-speed mode (Hs-mode) – supports transfer rates up to 3.4 Mbit/s.
+
+There can by any combination of the devices on the bus regardless of the supported speed and addressing. Fast mode devices are downward-compatible and can work with slower I<sup>2</sup>C controllers. However, most modern I<sup>2</sup>C controllers support all speeds and addressing modes.
+
+High-speed mode uses signals called SCLH and SDAH to emphasize the higher speed. These signals are usually separated from standard SDA and SCL lines. High-speed mode introduces also few differences (or improvements) in the specifications:
+
+- Improved data and clock line output drivers.
+- Schmitt trigger and spike suppression circuits on data and clock inputs.
+- Clock synchronization and arbitration is not used.
+- Clock signal has 1 to 2 high/low ratio.
+
+### 10-bit I<sup>2</sup>C Addressing
+
+In some cases it is very hard to avoid address collisions since 7 bits for I<sup>2</sup>C addresses allow only 127 different addresses where only 112 can actually be used. Some I<sup>2</sup>C devices on the board, despite address pins, have the same address.
+
+10-bit addressing can be used together with 7-bit addressing since a special 7-bit address (1111 0XX) is used to signal 10-bit I<sup>2</sup>C address. When a master wants to address a slave device using 10-bit addressing, it generates a start condition, then it sends 5 bits signaling 10-bit addressing (1111 0), followed by the first two bits of the I<sup>2</sup>C address and then the standard read/write bit.
+
+<p align="center">
+    <img src="https://files.catbox.moe/lkav2z.gif">
+</p>
+
+If the master will write data to the slave device it must send the remaining 8 bits of slave address as the second byte.
+
+If the master will read data from the slave device it must send the complete 10-bit address (two bytes) as for writing, then a repeated start is sent followed by the first address byte with read/write bit set to high to signal reading. After this procedure the data can be read from the slave device.
+
+<p align="center">
+    <img src="https://files.catbox.moe/ojr6se.gif">
+</p>

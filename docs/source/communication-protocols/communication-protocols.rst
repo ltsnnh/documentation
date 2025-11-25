@@ -8,7 +8,7 @@ There are various communication protocols used in the embedded system to communi
 - UART - generally be used to communicate between a microcontroller and a laptop. It can send log messages to the laptop (useful for debugging) or receive keyboard input from the laptop (not used much, but sometimes for controlled testing).
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 
 	spi
 	i2c
