@@ -21,9 +21,9 @@ SPI uses four wires to communicate, which are referred to as the SPI bus. Line S
 The master device always transmits a square wave on SCK (source clock) to synchronize all devices. To initiate communication (in independent slave mode - normal mode), the master device sets CS/SS (chip select/slave select) low for a particular device. The master device sends data to the slave device on the MOSI (master out, slave in) line. At the same time, the slave device sends data to the master device on the MISO (master in, slave out) line. To stop communication, the master devices sets CS/SS high again.
 
 <p align="center">
-    <img src="https://files.catbox.moe/0jyafc.jpg" width="512">
+    <img src="https://files.catbox.moe/0jyafc.jpg" width="512"><br>
+    Typical SPI Connection Diagram
 </p>
-<p align="center">Typical SPI Connection Diagram</p>
 
 ### SCK/SCLK (Source Clock)
 
@@ -46,9 +46,9 @@ There is usually a pull-up resistor on the CS pin to set a default value. A pull
 ### Hardware signal
 
 <p align="center">
-    <img src="https://files.catbox.moe/a5owi4.png" width="512">
+    <img src="https://files.catbox.moe/a5owi4.png" width="512"><br>
+    SPI signals on an oscilloscope
 </p>
-<p align="center">SPI signals on an oscilloscope</p>
 
 You can’t really distinguish between MISO and MOSI in this picture but just pick one to be MOSI and the other to be MISO.
 
@@ -69,9 +69,9 @@ The master device can select which slave to talk to by setting the **SS** (slave
 
 The Master device on the SPI bus has to configure and generate the clock signal at the beginning of any communication. During each SPI clock cycle, full-duplex data transmission occurs. The master sends a bit on the MOSI line and the slave reads it, while the slave sends a bit on the MISO line and the master reads it.
 
-This sequence is maintained even when only one-directional data transfer is intended. Which means in order to receive any data you have to actually send something! in this case, we call it “Dummy Data” or “Junk”!
+This sequence is maintained even when only one-directional data transfer is intended. Which means in order to receive any data you have to actually send something! In this case, we call it “Dummy Data” or “Junk”!
 
-Theoretically, the clock rate can be whatever you want provided that it’s practically realizable. The SPI serial clock is derived from the CLKsys of your system, which means it can by Fosc/2 or 4, 8, 16 or whatever. The dynamic range starts from a few KHz up to several MHz. (Practical limitations are case-dependent for each system).
+Theoretically, the clock rate can be whatever you want provided that it’s practically realizable. The SPI serial clock is derived from the CLK<sub>sys</sub> of your system, which means it can by F<sub>osc</sub>/2 or 4, 8, 16 or whatever. The dynamic range starts from a few KHz up to several MHz. (Practical limitations are case-dependent for each system).
 
 ### Clock Polarity, Clock Phase
 
@@ -86,9 +86,9 @@ The SPI Master device should also configure the clock polarity (CKP) and clock p
 - For (CKE = 1), the “out” side changes the data on the leading edge of the current clock cycle, while the “in” side captures the data on (or shortly after) the trailing edge of the clock cycle.
 
 <p align="center">
-    <img src="https://files.catbox.moe/9wr2m5.jpg" width="512">
+    <img src="https://files.catbox.moe/9wr2m5.jpg" width="512"><br>
+    SPI Clock Phase And Polarity Table
 </p>
-<p align="center">SPI Clock Phase And Polarity Table</p>
 
 You have to refer to the device’s datasheet in order to set both CKP & CKE properly. If the SPI Master doesn’t configure the CKP (clock polarity) & CKE (clock phase) to what the slave device expects, any sort of communication (write/read) will fail.
 
@@ -109,30 +109,30 @@ All devices on the SPI bus including the master and all slaves can all be connec
 
 ### Daisy chain
 
-Each device is connected between 2 other devices in a circular (logically) way as shown in the diagram down below. [NOTE: a logical circle is a term that describes data circulation flow in the network which means that devices connection doesn’t necessarily need to be circular in shape]
+Each device is connected between 2 other devices in a circular (logically) way as shown in the diagram down below. [NOTE: A logical circle is a term that describes data circulation flow in the network which means that devices connection doesn’t necessarily need to be circular in shape.]
 
 <p align="center">
-    <img src="https://files.catbox.moe/1zm14k.jpg" width="512">
+    <img src="https://files.catbox.moe/1zm14k.jpg" width="512"><br>
+    SPI Daisy Chain Configuration
 </p>
-<p align="center">SPI Daisy Chain Configuration</p>
 
 The SPI port of each slave device is designed to send data out during the second group of clock pulses an exact copy of the data it received during the first group of clock pulses. The whole chain acts as a communication shift register. Each slave copies the input data to the output in the next clock cycle until the SS line goes high. Such a feature only requires a single SS line from the master, rather than a separate SS line for each slave.
 
 That means a data frame will keep propagating through slave devices as long as the SS line is held low.
 
 <p align="center">
-    <img src="https://files.catbox.moe/ikeova.png" width="512">
+    <img src="https://files.catbox.moe/ikeova.png" width="512"><br>
+    Single SPI master addresses multiple slave devices using only one SS line
 </p>
-<p align="center">Single SPI master addresses multiple slave devices using only one SS line</p>
 
 ### Independent slave
 
 In the independent slave configuration, there is an independent slave select line for each slave. This is the way SPI is normally used. The master asserts only one chip select at a time.
 
 <p align="center">
-    <img src="https://files.catbox.moe/3v7i78.png" width="512">
+    <img src="https://files.catbox.moe/3v7i78.png" width="512"><br>
+    SPI Independent Slave Configuration
 </p>
-<p align="center">SPI Independent Slave Configuration</p>
 
 As you can see, this configuration can be impractical in case your system involves many SPI slave devices. Which will require too many IO pins to control all SS lines.
 
@@ -144,7 +144,7 @@ As you can see, this configuration can be impractical in case your system involv
 - Potentially high-speed data transfer rates.
 - Few wires are required for the bus (typically 4 lines).
 - Extremely flexible data transfer. It’s not limited to 8-Bits, it can be any arbitrarily-sized words.
-- Slaves don’t need unique addresses (unlike I2C).
+- Slaves don’t need unique addresses (unlike I<sup>2</sup>C).
 - Slaves use the master’s clock and do not need precision oscillators (unlike UART).
 - Transceivers are not needed (unlike CAN).
 
@@ -152,6 +152,6 @@ As you can see, this configuration can be impractical in case your system involv
 
 - No hardware slave acknowledgment (the master could be transmitting to nowhere without knowing).
 - Typically supports only one master device.
-- Requires more pins (unlike I2C).
+- Requires more pins (unlike I<sup>2</sup>C).
 - No hardware-level error-checking protocol is defined.
 - Can only support very short distances (usually onboard communications) compared to RS-232 and CAN-Bus.

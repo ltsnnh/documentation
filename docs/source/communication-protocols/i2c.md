@@ -17,9 +17,9 @@ I<sup>2</sup>C-bus is used in various control architectures such as System Manag
 The I<sup>2</sup>C bus uses two wires: serial data (SDA) and serial clock (SCL). All I<sup>2</sup>C master and slave devices are connected with only those two wires.
 
 <p align="center">
-    <img src="https://files.catbox.moe/npfpvh.png">
+    <img src="https://files.catbox.moe/npfpvh.png"><br>
+    Typical I<sup>2</sup>C Connection Diagram
 </p>
-<p align="center">Typical I<sup>2</sup>C Connection Diagram</p>
 
 Each device can be a transmitter, a receiver or both. Some devices are masters – they generate bus clock and initiate communication on the bus, other devices are slaves and respond to the commands on the bus.
 
@@ -90,21 +90,21 @@ Each slave device on the bus should have a unique 7-bit address. The communicati
 The communication is ended with the Stop condition which also signals that the I<sup>2</sup>C bus is free. If the master needs to communicate with other slaves it can generate a repeated start with another slave address without generation Stop condition. All the bytes are transferred with the MSB bit shifted first.
 
 <p align="center">
-    <img src="https://files.catbox.moe/nmis2v.gif">
+    <img src="https://files.catbox.moe/nmis2v.gif"><br>
+    The master only writes to the slave device
 </p>
-<p align="center">The master only writes to the slave device</p>
 
 <p align="center">
-    <img src="https://files.catbox.moe/nmis2v.gif">
+    <img src="https://files.catbox.moe/nmis2v.gif"><br>
+    The master only reads to the slave device
 </p>
-<p align="center">The master only reads to the slave device</p>
 
 Sometimes the master needs to write some data and then read from the slave device. In such cases it must first write to the slave device, change the data transfer direction and then read the device. This means sending the I<sup>2</sup>C address with the R/W bit set to write and then sending some additional data like register address. After writing is finished the master device generates repeated start condition and sends the I<sup>2</sup>C address with the R/W bit set to read. After this the data transfer direction is changed and the master device starts reading the data.
 
 <p align="center">
-    <img src="https://files.catbox.moe/aclnm7.gif">
+    <img src="https://files.catbox.moe/aclnm7.gif"><br>
+    The master reads and writes to the slave device<
 </p>
-<p align="center">The master reads and writes to the slave device</p>
 
 ## Extension of the I<sup>2</sup>C specifications
 
