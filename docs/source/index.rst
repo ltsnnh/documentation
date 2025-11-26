@@ -23,11 +23,6 @@ This documentation has been created with the following goals in mind:
    :maxdepth: 2
 
    communication-protocols/communication-protocols
-
-.. toctree::
-   :caption: stm32f103c8t6
-   :maxdepth: 2
-
    stm32f103c8t6/stm32f103c8t6
 
 --------------------------------------------------------------------------------

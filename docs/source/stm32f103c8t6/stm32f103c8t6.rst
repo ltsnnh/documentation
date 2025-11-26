@@ -8,6 +8,7 @@ Soon, ARM will also be present in higher numbers in the datacenter. These are al
 
 The device chosen to start this "difficult way" is the STMicroelectronics STM32F103C8T6. It's likely to remain the lowest-cost way for students and
 hobbyists alike to explore the ARM Cortex-M3 platform for quite some time. This part number is a mouthful, so let's break it down:
+
 - STM32 (STMicroelectronics platform, implies devices are based upon a 32-bit path)
 - F1 (device family)
 - 03 (subdivision of the device family, decides the CPU and peripheral capabilities of the device)
@@ -15,6 +16,7 @@ hobbyists alike to explore the ARM Cortex-M3 platform for quite some time. This 
 
 The peripheral support of the STM32F103 is simply amazing when you consider its
 price. Peripherals included consist of:
+
 - 4 x 16-bit GPIO Ports (most are 5-volt tolerant)
 - 3 x USART (Universal Synchronous/Asynchronous Receiver/
 Transmitter)
@@ -23,7 +25,7 @@ Transmitter)
 - 2 x ADC (Analog Digital Converter)
 - 2 x DMA (Direct Memory Address controllers)
 - 4 x timers
-- watch dog timers
+- Watch Dog timers
 - 1 x USB controller
 - 1 x CAN controller
 - 1 x CRC generator
@@ -38,4 +40,4 @@ What you learn about the STM32F103 family can be leveraged later in more advance
 .. toctree::
 	:maxdepth: 2
 
-	spi/spi-func-desc
+	spi
