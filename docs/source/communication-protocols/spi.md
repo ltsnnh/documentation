@@ -1,6 +1,6 @@
-# SPI (Serial Peripheral Interface)
+# SPI
 
-SPI is an acronym for ***Serial Peripheral Interface***, which is used to communicate between microcontrollers and peripheral devices (like Flash Memories, ADC, DAC, RTC, LCD, SDcards, and much more).
+[SPI](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface) is an acronym for ***Serial Peripheral Interface***, which is used to communicate between microcontrollers and peripheral devices (like Flash Memories, ADC, DAC, RTC, LCD, SDcards, and much more).
 
 In this section, we will describe the SPI protocol.
 

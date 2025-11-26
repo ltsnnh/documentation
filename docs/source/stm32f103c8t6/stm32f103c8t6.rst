@@ -18,8 +18,7 @@ The peripheral support of the STM32F103 is simply amazing when you consider its
 price. Peripherals included consist of:
 
 - 4 x 16-bit GPIO Ports (most are 5-volt tolerant)
-- 3 x USART (Universal Synchronous/Asynchronous Receiver/
-Transmitter)
+- 3 x USART (Universal Synchronous/ Asynchronous Receiver/ Transmitter)
 - 2 x :math:`I^2`C controllers
 - 2 x SPI controllers
 - 2 x ADC (Analog Digital Converter)

@@ -1,6 +1,6 @@
-# I<sup>2</sup>C (Inter Integrated Circuit)
+# I<sup>2</sup>C
 
-I<sup>2</sup>C is an acronym for ***Inter Integrated Circuit*** , which is used for attaching lower-speed peripheral ICs to processors and microcontrollers in short-distance, intra-board communication.
+[I<sup>2</sup>C](https://en.wikipedia.org/wiki/I2C) is an acronym for ***Inter Integrated Circuit*** , which is used for attaching lower-speed peripheral ICs to processors and microcontrollers in short-distance, intra-board communication.
 
 In this section, we will describe the I<sup>2</sup>C protocol.
 

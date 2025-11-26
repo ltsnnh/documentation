@@ -14,6 +14,7 @@ version = ''
 extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
     'myst_parser',
 ]
 
