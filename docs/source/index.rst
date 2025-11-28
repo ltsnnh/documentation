@@ -25,6 +25,12 @@ This documentation has been created with the following goals in mind:
    communication-protocols/communication-protocols
    stm32f103c8t6/stm32f103c8t6
 
+.. toctree::
+   :caption: Electronics
+   :maxdepth: 2
+
+   ics-modules/ics-modules
+
 --------------------------------------------------------------------------------
 
 If you would like to contribute to our documentation, create a branch and start a pull request.
