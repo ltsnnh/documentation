@@ -6,4 +6,4 @@ ICs & Modules
 .. toctree::
 	:maxdepth: 2
 
-	w25qxx
+	w25q32
