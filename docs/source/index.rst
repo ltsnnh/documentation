@@ -15,21 +15,22 @@ This documentation has been created with the following goals in mind:
 --------------------------------------------------------------------------------
 
 .. toctree::
-   :caption: Programming
-   :maxdepth: 2
-
-.. toctree::
    :caption: Embedded Systems
    :maxdepth: 2
 
    communication-protocols/communication-protocols
-   stm32f103c8t6/stm32f103c8t6
 
 .. toctree::
    :caption: Electronics
    :maxdepth: 2
 
    ics-modules/ics-modules
+
+.. toctree::
+   :caption: STM32F103C8T6
+   :maxdepth: 2
+
+   stm32f103c8t6_spi/spi
 
 --------------------------------------------------------------------------------
 
