@@ -30,7 +30,7 @@ This documentation has been created with the following goals in mind:
    :caption: STM32F103C8T6
    :maxdepth: 2
 
-   stm32f103c8t6_spi/spi
+   stm32f103c8t6_spi/stm32f103c8t6_spi
 
 --------------------------------------------------------------------------------
 
