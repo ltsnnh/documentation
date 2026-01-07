@@ -1,4 +1,4 @@
-# SPI
+# Functional Description
 
 The serial peripheral interface (SPI) allows half/ full-duplex, synchronous, serial communication with external devices. By default, it is the SPI function that is selected. It is possible to switch the interface from SPI to I<sup>2</sup>S by software. The I<sup>2</sup>S audio protocol is only supported in high-density, XL-density and connectivity line devices.
 

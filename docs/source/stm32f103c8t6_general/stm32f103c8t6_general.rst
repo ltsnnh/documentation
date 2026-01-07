@@ -1,0 +1,37 @@
+STM32F103C8T6
+================================================================================
+
+There is considerable interest in the ARM Cortex platform today because ARM
+devices are found everywhere. Units containing ARM devices range from the small
+microcontroller embedded systems to cellphones and larger servers running Linux.
+Soon, ARM will also be present in higher numbers in the datacenter. These are all good reasons to become familiar with ARM technology.
+
+The device chosen to start this "difficult way" is the STMicroelectronics STM32F103C8T6. It's likely to remain the lowest-cost way for students and
+hobbyists alike to explore the ARM Cortex-M3 platform for quite some time. This part number is a mouthful, so let's break it down:
+
+- STM32 (STMicroelectronics platform, implies devices are based upon a 32-bit path)
+- F1 (device family)
+- 03 (subdivision of the device family, decides the CPU and peripheral capabilities of the device)
+- C8T6 (physical manifestation affecting amount of SRAM, flash memory, and so on)
+
+The peripheral support of the STM32F103 is simply amazing when you consider its
+price. Peripherals included consist of:
+
+- 4 x 16-bit GPIO Ports (most are 5-volt tolerant)
+- 3 x USART (Universal Synchronous/ Asynchronous Receiver/ Transmitter)
+- 2 x I:super:`2`C controllers
+- 2 x SPI controllers
+- 2 x ADC (Analog Digital Converter)
+- 2 x DMA (Direct Memory Address controllers)
+- 4 x timers
+- Watch Dog timers
+- 1 x USB controller
+- 1 x CAN controller
+- 1 x CRC generator
+- 20K static RAM
+- 64K (or 128K) FLASH memory
+- ARM Cortex M3 CPU, max 72 MHz clock
+
+What you learn about the STM32F103 family can be leveraged later in more advanced offerings like the STM32F407.
+
+--------------------------------------------------------------------------------
