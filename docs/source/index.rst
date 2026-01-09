@@ -31,6 +31,7 @@ This documentation has been created with the following goals in mind:
    :maxdepth: 2
 
    stm32f103c8t6_general/stm32f103c8t6_general
+   stm32f103c8t6_rcc/stm32f103c8t6_rcc
    stm32f103c8t6_spi/stm32f103c8t6_spi
 
 --------------------------------------------------------------------------------

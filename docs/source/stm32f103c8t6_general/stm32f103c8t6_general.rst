@@ -35,3 +35,8 @@ price. Peripherals included consist of:
 What you learn about the STM32F103 family can be leveraged later in more advanced offerings like the STM32F407.
 
 --------------------------------------------------------------------------------
+
+.. toctree::
+	:maxdepth: 2
+
+	memory-bus
